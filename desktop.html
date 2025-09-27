@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>STPC</title>
+		<link rel="icon" href="icon/logo.png">
+		<link rel="stylesheet" href="stylesheets/desktop.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	</head>
+	<noscript>
+	</noscript>
+	<body>
+		<audio autoplay>
+			<source src="media/startup.mp3" type="audio/mpeg">
+		</audio>
+		<script>
+			alert("STPC是一个网站，\n由@普通又神秘开发。\n模拟计算机操作系统的页面。\n请不要与任何操作系统混淆。\n图片和音频资源均来自网络，\n如侵权请联系我，\n联系方式见网站内\"关于\"页面中。");
+		</script>
+		
+		<!--应用-->
+		<div id="about" class="common-app"></div>
+		<div id="taskmgr" class="common-app"></div>
+		<div id="settings" class="common-app"></div>
+		<div id="calc" class="calc"></div>
+		<div id="browser" class="common-app"></div>
+		<div id="explorer" class="common-app"></div>
+		<div id="notepad" class="common-app"></div>
+		<div id="cmd" class="common-app"></div>
+		<div id="liteapps" class="common-app"></div>
+		<div id="stmusic" class="common-app"></div>
+		<div id="minesweeper" class="common-app"></div>
+
+		<!--系统界面中的元素-->
+
+		<!--底部菜单-->
+        <div id="undermenu" class="unders"></div>
+		<div id="tasks" class="unders"></div>
+		<div id="time" class="unders"></div>
+
+		<!--开始菜单-->
+		<div id="start-menu" class="menu"></div>
+
+		<!--新闻-->
+		<div id="news" class="menu"></div>
+
+		<!--天气-->
+		<div id="weather" class="menu"></div>
+
+		<!--时间的详细信息-->
+		<div id="time-view" class="menu"></div>
+
+		<!--桌面图标-->
+		<button class="desktopicon" onclick="openapp('explorer','thispc')">
+			<img src="icon/thispc.png">
+			<p>此电脑</p>
+		</button>
+		<button class="desktopicon" onclick="openapp('explorer','recycle')">
+			<img src="icon/recycle.png">
+			<p>垃圾桶</p>
+		</button>
+		<button class="desktopicon" onclick="openapp('settings','main')">
+			<img src="icon/settings.png">
+			<p>设置</p>
+		</button>
+		<button class="desktopicon" onclick="openapp('about','intro')">
+			<img src="icon/about.png">
+			<p>关于</p>
+		</button>
+		<button class="desktopicon" ondblclick="openBrowser('https://www.baidu.com/')">
+			<img src="icon/browser.png">
+			<p>浏览器</p>
+		</button>
+
+		<!--核心的js引入-->
+		<script src="script/jq.min.js"></script>
+		<script src="script/getTime.js"></script>
+	</body>
+	<noscript>
+		<style>
+			body {
+				font-size: 20px;
+				text-align: center;
+			}
+		</style>
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+			<p>JavaScript未启用，STPC无法正常工作！</p>
+		</div>
+	</noscript>
+</html>
