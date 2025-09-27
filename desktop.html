@@ -50,11 +50,12 @@
 		<div id="time-view" class="menu"></div>
 
 		<!--桌面图标-->
-		<button class="desktopicon" onclick="openapp('explorer','thispc')">
+		<button class="desktopicon" id="thispc-button" ondblclick="openapp('explorer','thispc')">
 			<img src="icon/thispc.png">
 			<p>此电脑</p>
 		</button>
-		<button class="desktopicon" onclick="openapp('explorer','recycle')">
+		<br>
+		<button class="desktopicon" id="recycle-button" ondblclick="openapp('explorer','recycle')">
 			<img src="icon/recycle.png">
 			<p>垃圾桶</p>
 		</button>
