@@ -18,6 +18,7 @@ STPC 是一个模拟桌面环境的网页应用，提供多种实用工具和应
 - `img/background.png`: 桌面背景图片。
 - `media/startup.mp3`: 启动音效。
 - `stylesheets/desktop.css`: 桌面环境的样式表文件。
+- `jq.min.js`: 实现主要交互功能的函数库。
 
 ## 使用方法
 
@@ -34,3 +35,5 @@ STPC 是一个模拟桌面环境的网页应用，提供多种实用工具和应
 3. 提交更改 (`git commit -m 'Add new feature'`)。
 4. Push 到分支 (`git push origin feature/new-feature`)。
 5. 提交 Pull Request。
+
+**注意：**不要忘记**说明**一下你的Pull Request![说明文档模板在这里。](./.gitee/PULL_REQUEST_TEMPLATE.md)
