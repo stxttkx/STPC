@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>关于</title>
+        <link rel="icon" href="icon/about.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            head {
+                text-align: center;
+            }
+            head table {
+                align-items: center;
+                background-color: rgb(53, 56, 243);
+            }
+        </style>
+        <h1>
+            <img src="icon/about.png" width=100 height=auto>
+            关于此项目
+        </h1>
+        <table>
+            <tr>
+                <td><a onclick="about_int()">项目简介</a></td>
+                <td><a onclick="about_update()">项目简介</a></td>
+            </tr>
+        </table>
+    </head>
+    <body>
+        <div id="main"></div>
+        <script>
+            function about_int(){
+                const content = document.getElementById('main');
+                content.innerHTML = `
+                <h1>项目简介</h1>
+                <p>STPC是一个模拟计算机操作系统的网站，由<strong>@普通又神秘</strong>开发。</p>
+                <h2>目录结构</h2>
+                <ul>
+                    <li>desktop.html: 桌面环境的 HTML 文件。</li>
+                    <li>icon/logo.png: 项目图标。</li>
+                    <li>img/background.png: 桌面背景图片。</li>
+                    <li>media/startup.mp3: 启动音效。</li>
+                    <li>stylesheets/desktop.css: 桌面环境的样式表文件。</li>
+                    <li>jq.min.js: 实现主要交互功能的函数库。</li>
+                </ul>
+                `;
+            }
+            window.onload = about_int;
+            function about_update(){
+                const content = document.getElementById('main');
+                content.innerHTML = `
+                <h1>更新日志</h1>
+                <p>暂无更新日志。</p>
+                <p>该项目正在火热开发中，敬请期待!</p>
+                `;
+            }
+        </script>
+    </body>
+</html>
