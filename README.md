@@ -41,19 +41,11 @@ STPC 是一个模拟桌面环境的网页应用。
 - [ ] 点击桌面图标启动相应的应用程序。
 - [ ] 通过设置中心调整个性化选项。
 
-## 贡献指南
+## 贡献
 
 欢迎贡献代码或提出建议！
 
-- 贡献代码时请遵循以下步骤：
-
-1. Fork 本仓库。
-2. 创建新分支 (`git checkout -b feature/new-feature`)。
-3. 提交更改 (`git commit -m 'Add new feature'`)。
-4. Push 到分支 (`git push origin feature/new-feature`)。
-5. 在平台上提交
-
-**注意：** 不要忘记**说明**一下你的Pull Request！[说明文档模板在这里。](./.gitee/PULL_REQUEST_TEMPLATE.zh-CN.md)
+- 贡献代码前，请先阅读[贡献指南](CONTRIBUTING.md)
 
 - 提交Issue时请注意：
 
