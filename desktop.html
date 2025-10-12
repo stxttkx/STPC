@@ -31,9 +31,19 @@
 		<!--系统界面中的元素-->
 
 		<!--底部菜单-->
-        <div id="undermenu" class="unders"></div>
+        <div id="undermenu" class="unders">
+			<button id="start" class="undermenu-button" onclick="changeStartMenu()">
+				<img src="icon/logo.png" style="height: 20px; width: 20px; vertical-align: middle;">
+			</button>
+			<button id="news-button" class="undermenu-button" onclick="changeNews()">
+				<img src="icon/news.png" style="height: 20px; width: 20px; vertical-align: middle;">
+			</button>
+		</div>
 		<div id="tasks" class="unders"></div>
-		<div id="time" class="unders"></div>
+		<div id="time" class="unders">
+			<p><span id="time_hour"></span>:<span id="time_minute"></span>:<span id="time_second"></span></p>
+			<p><span id="time_year"></span>年<span id="time_month"></span>月<span id="time_day"></span>日</p>
+		</div>
 
 		<!--开始菜单-->
 		<div id="start-menu" class="menu"></div>
