@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>设置</title>
+        <link rel="icon" href="icon/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    </head>
+    <body>
+        <table class="main-table">
+            <tr>
+                <td>
+                    <h1><img src="icon/setting/appicon.png">设置</h1>
+                    <table class="btns">
+                        <tr><td><button class="settings-btn" onclick="settings('mainpage');"><img src="icon/settings/mainpage.png" width=100 height=auto>主页</button></td></tr>
+                        <tr><td><button class="settings-btn" onclick="settings('drive');"><img src="icon/settings/drive.png" width=100 height=auto>网络与数据传输</button></td></tr>
+                        <tr><td><button class="settings-btn" onclick="settings('styles');"><img src="icon/settings/mainpage.png" width=100 height=auto>个性化</button></td></tr>
+                        <tr><td><button class="settings-btn" onclick="settings('user');"><img src="icon/settings/mainpage.png" width=100 height=auto>用户</button></td></tr>
+                        <tr><td><button class="settings-btn" onclick="settings('about');"><img src="icon/settings/mainpage.png" width=100 height=auto>关于本机</button></td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td><div id="main"></div></td></tr>
+        </table>
+        <script>
+            function firstGo(){
+                settings('mainpage');
+            }
+            window.onload = firstGo;
+            function settings(task) {
+                var details = document.getElementById('main');
+                if ( task == 'mainpage' ) {
+                    details.innerHTML = `<img src=\"icon/settings/mainpage.png\" width=100 height=auto><h1>主页</h1>
+                    <p><strong>欢迎访问STPC！</strong></p>
+                    <p>当前设备：STPC网页版模拟设备 <a onclick="settings('about')">查看设备详情</a></p>
+                    <p>当前用户：Administrator <a onclick="settings('users')>更改用户设置</a></p>`;
+                }
+                if ( task == 'drive' ) {
+                    details.innerHTML = `<img src=\"icon/settings/drive.png\" width=100 height=auto><h1>网络与数据传输</h1>
+                    <p>无线网络状态：已连接 <a onclick="settings('about')">进入无线网络设置</a></p>
+                    <p>蓝牙状态：已开启 <a onclick="settings('users')>进入蓝牙设置</a></p>
+                    <p>CA证书：0个<a>安装CA证书</a></p>
+                    <p>VPN连接：0个正在运行<a>创建VPN连接</a></p>`
+                }
+                if ( task == 'drive-wifi' ) {
+                    details.innerHTML = `<img src=\"icon/settings/drive.png\" width=100 height=auto><h1>网络与数据传输</h1>
+                    <h2>无线网络设置</h2>
+                    <p>当前无线网络状态：已连接</p>
+                    <p>当前正在连接：SPYTO<br>
+                    网关：Administrator <a onclick="settings('users')>更改用户设置</a></p>`;
+                }
+                
+                /*if ( task == 'mainpage' ) {
+                    details.innerHTML = `<img src=\"icon/settings/mainpage.png\" width=100 height=auto><h1>用户</h1>
+                    <p>在这里你可以设置应用的主页。</p>
+                    <p>当前设备：STPC网页版模拟设备 <a onclick="settings('about')">查看设备详情</a></p>
+                    <p>当前用户：Administrator <a onclick="settings('users')>更改用户设置</a></p>`;
+                }
+                if ( task == 'mainpage' ) {
+                    details.innerHTML = `<img src=\"icon/settings/mainpage.png\" width=100 height=auto><h1>关于本机</h1>
+                    <p>在这里你可以设置应用的主页。</p>
+                    <p>当前设备：STPC网页版模拟设备 <a onclick="settings('about')">查看设备详情</a></p>
+                    <p>当前用户：Administrator <a onclick="settings('users')>更改用户设置</a></p>`;
+                }*/
+            }
+        </script>
+    </body>
+</html>

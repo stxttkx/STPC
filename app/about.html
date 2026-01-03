@@ -22,6 +22,7 @@
             <tr>
                 <td><a onclick="about_int()">项目简介</a></td>
                 <td><a onclick="about_update()">更新日志</a></td>
+                <td><a onclick="about_feedback()">意见反馈</a></td>
             </tr>
         </table>
     </head>
@@ -40,7 +41,7 @@
                     <li>img/background.png: 桌面背景图片。</li>
                     <li>media/startup.mp3: 启动音效。</li>
                     <li>stylesheets/desktop.css: 桌面环境的样式表文件。</li>
-                    <li>jq.min.js: 实现主要交互功能的函数库。</li>
+                    <li>desktop.js: 实现主要交互功能的函数库。</li>
                 </ul>
                 `;
             }
@@ -52,6 +53,13 @@
                 <p>暂无更新日志。</p>
                 <p>该项目正在火热开发中，敬请期待!</p>
                 `;
+            }
+            function about_feedback(){
+                const content = document.getElementById('main');
+                content.innerHTML = `
+                <h1>意见反馈</h1>
+                <p>如果您有任何建议或意见，欢迎在Gitee上提交Issues。</p>
+                <p><a href="https://gitee.com/stxttk/STPC/issues">https://gitee.com/stxttk/STPC/issues</a>是唯一的链接，请注意甄别！</p>
             }
         </script>
     </body>
