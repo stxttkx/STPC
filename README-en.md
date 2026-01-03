@@ -33,23 +33,14 @@ Plan:Simulate a desktop environment, offering a variety of practical tools and a
 - `img/background.png`: Desktop background image.
 - `media/startup.mp3`: Startup sound effect.
 - `stylesheets/`: Stylesheet files.
+- `desktop.js`: Function library that implements the main interactive features of the desktop environment.
 
 ## Usage Instructions
 
-- [x] Open the `desktop.html` file to run the desktop environment in your browser.
+- [x] Open the `index.html` file to run in your browser.
 - [ ] Click on desktop icons to launch the corresponding applications.
 - [ ] Adjust personalization settings through the settings center.
 
 ## Contribution Guidelines
 
-Code contributions or suggestions are welcome!
-
-- If you want to contribute code,please follow these steps:
-
-1. Fork this repository.
-2. Create a new branch (`git checkout -b feature/new-feature`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature/new-feature`).
-5. Submit a Pull Request.
-
-==Note== Do not forget to **introduce** your Pull Request！[Here is the introduction document.](./.gitee/PULL_REQUEST_TEMPLATE.en.md)
+Code contributions or suggestions are welcome!Please read [guide](CONTRIBUTING-en.md) before contributing.
