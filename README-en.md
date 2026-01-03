@@ -37,9 +37,11 @@ Plan:Simulate a desktop environment, offering a variety of practical tools and a
 
 ## Usage Instructions
 
-- [x] Open the `desktop.html` file to run in your browser.
+- [x] Open the `index.html` file to run in your browser.
 - [ ] Click on desktop icons to launch the corresponding applications.
 - [ ] Adjust personalization settings through the settings center.
+
+> Try it online: <https://stxttkx.github.io/STPC/>
 
 ## Contribution Guidelines
 
