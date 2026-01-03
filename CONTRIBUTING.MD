@@ -1,6 +1,6 @@
 # 贡献指南
 
-欢迎贡献代码！由于Gitee的局限性，请使用**Git 命令行**提交代码，或**配合Visual Studio Code**使用（注意：若要提交代码，Visual Studio Code 不能脱离Git而存在）。
+欢迎贡献！
 
 - 贡献代码时请遵循以下步骤：
 

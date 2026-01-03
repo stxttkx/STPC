@@ -33,14 +33,18 @@ Plan:Simulate a desktop environment, offering a variety of practical tools and a
 - `img/background.png`: Desktop background image.
 - `media/startup.mp3`: Startup sound effect.
 - `stylesheets/`: Stylesheet files.
-- `desktop.js`: Function library that implements the main interactive features of the desktop environment.
+- `desktop.js`: Function library implementing main interactive features.
 
 ## Usage Instructions
 
-- [x] Open the `index.html` file to run in your browser.
+- [x] Open the `desktop.html` file to run in your browser.
 - [ ] Click on desktop icons to launch the corresponding applications.
 - [ ] Adjust personalization settings through the settings center.
 
 ## Contribution Guidelines
 
 Code contributions or suggestions are welcome!Please read [guide](CONTRIBUTING-en.md) before contributing.
+
+## License
+
+This project is licensed under the [Eclipse Public License 2.0 (EPL-2.0)](https://www.apache.org/licenses/LICENSE-2.0.txt).

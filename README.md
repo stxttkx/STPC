@@ -37,11 +37,11 @@ STPC 是一个模拟桌面环境的网页应用。
 
 ## 使用方法
 
-- [x] 打开`index.html`文件即可在浏览器中运行。
+- [x] 打开`desktop.html`文件即可在浏览器中运行。
 - [ ] 点击桌面图标启动相应的应用程序。
 - [ ] 通过设置中心调整个性化选项。
 
-> 在线体验：<https://stxttkx.github.io/STPC/>
+> 在线体验：<https://stxttkx.github.io/STPC/desktop.html>
 
 ## 贡献
 
