@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>登录 - STPC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="icon/logo.png">
+        <style></style>
+    </head>
+    <loading style="align-items:center;">
+        <img src="icon/logo.png" height=50vh style="margin-top:15vh;">
+        <img src="icon/loading.gif" height=15vh style="margin-top:10vh;">
+    </loading>
+    <body style="background-image:url(\"img/signing-in.jpg\");">
+        <img src="app/icon/settings/usericon.jpg" height=50vh style="align-items:center;">
+        <div id="signIn" style="text-align:center;"></div>
+        <button onclick="window.location.href = desktop.html?user=${loginUser}">以此身份进入STPC</button>
+        <table>
+            <tr>
+                <td><p>选择用户</p></td>
+                <td><p>电源选项</p></td>
+            </tr>
+            <tr>
+                <td><div id="userlist"></div></td>
+                <td><button onclick="window.location.href = shutdown.html">关机</button><br><button onclick="window.location.href = reload.html">重启</button></td>
+            </tr>
+        </table>
+        <script></script>
+    </body>
+</html>
