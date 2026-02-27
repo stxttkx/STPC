@@ -18,7 +18,7 @@
 STPC is a web application.
 Plan:Simulate a desktop environment, offering a variety of practical tools and applications suitable for learning and daily using.
 
-## Features ( and developing plan )
+## Features ( The left box shows the development progress. )
 
 - [ ] **Desktop Interface**: Provide an intuitive desktop environment.
 - [ ] **Applications**: Include commonly-used applications such as calculator, browser, file manager, notepad, and command-line tools.
@@ -35,7 +35,7 @@ Plan:Simulate a desktop environment, offering a variety of practical tools and a
 - `stylesheets/`: Stylesheet files.
 - `desktop.js`: Function library implementing main interactive features.
 
-## Usage Instructions
+## Usage Instructions ( The left box shows the development progress. )
 
 - [x] Open the `index.html` file to run in your browser.
 - [ ] Click on desktop icons to launch the corresponding applications.
