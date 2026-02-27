@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <a target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.txt">
+    <a target="_blank" href="https://www.eclipse.org/legal/epl-2.0/">
 		<img src="https://img.shields.io/badge/license-EPL_2.0-blue" alt="EPL 2.0" />
 	</a>
     <a target="_blank" href='https://gitee.com/stxttk/STPC/stargazers'>
