@@ -112,6 +112,13 @@
 			function changeStartMenu(){ document.getElementById('start-menu').classList.toggle('open'); }
 			function changeNews(){ document.getElementById('news').classList.toggle('open'); }
 
+			// 点空白处收起所有弹出的菜单
+			document.addEventListener('click', function(e){
+				if(e.target.closest('.menu')) return;                  // 点在菜单内：不处理
+				if(e.target.closest('#start, #news-button')) return;   // 点触发按钮：交给它自己 toggle
+				document.querySelectorAll('.menu.open').forEach(m => m.classList.remove('open'));
+			});
+
 			// 主题切换（明 / 暗）
 			function setTheme(t){
 				document.documentElement.setAttribute('data-theme', t);
