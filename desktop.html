@@ -16,6 +16,7 @@
 				text-align: center;
 			}
 		</style>
+		<link rel="stylesheet" href="desktop.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	</head>
 	<body>
@@ -41,7 +42,8 @@
 
 		<!--系统界面中的元素-->
 
-		<!--底部菜单-->
+		<!--任务栏（顶部 / 左对齐 / 半透明）-->
+		<div id="taskbar">
         <div id="undermenu" class="unders">
 			<button id="start" class="undermenu-button" onclick="changeStartMenu()">
 				<img src="icon/logo.png" style="height: 20px; width: 20px; vertical-align: middle;">
@@ -51,13 +53,24 @@
 			</button>
 		</div>
 		<div id="tasks" class="unders"></div>
+		<button id="theme-toggle" class="undermenu-button" title="切换主题" style="font-size:16px;">🌙</button>
 		<div id="time" class="unders">
 			<p><span id="time_hour"></span>:<span id="time_minute"></span>:<span id="time_second"></span></p>
 			<p><span id="time_year"></span>年<span id="time_month"></span>月<span id="time_day"></span>日</p>
 		</div>
+		</div>
 
-		<!--开始菜单-->
-		<div id="start-menu" class="menu"></div>
+		<!--开始菜单（75vw 宽 / 从上方弹出 / 搜索框 + 列表）-->
+		<div id="start-menu" class="menu">
+			<input class="search" type="text" placeholder="搜索应用...">
+			<ul class="app-list">
+				<li onclick="openapp('explorer','thispc')"><img src="icon/thispc.png"><span>此电脑</span></li>
+				<li onclick="openapp('explorer','recycle')"><img src="icon/recycle.png"><span>垃圾桶</span></li>
+				<li onclick="openapp('settings','main')"><img src="icon/settings.png"><span>设置</span></li>
+				<li onclick="openapp('about','intro')"><img src="icon/about.png"><span>关于</span></li>
+				<li onclick="openBrowser('https://www.baidu.com/')"><img src="icon/browser.png"><span>浏览器</span></li>
+			</ul>
+		</div>
 
 		<!--新闻-->
 		<div id="news" class="menu"></div>
@@ -94,6 +107,29 @@
 		<!--核心的js引入-->
 		<script src="desktop.js"></script>
 		<script src="script/getTime.js"></script>
+		<script>
+			// 开始菜单 / 新闻 弹出切换（带过渡动画）
+			function changeStartMenu(){ document.getElementById('start-menu').classList.toggle('open'); }
+			function changeNews(){ document.getElementById('news').classList.toggle('open'); }
+
+			// 主题切换（明 / 暗）
+			function setTheme(t){
+				document.documentElement.setAttribute('data-theme', t);
+				const b = document.getElementById('theme-toggle');
+				if(b) b.textContent = (t === 'dark' ? '🌙' : '☀️');
+				try{ localStorage.setItem('stpc-theme', t); }catch(e){}
+			}
+			(function(){
+				let t = 'light';
+				try{ t = localStorage.getItem('stpc-theme') || 'light'; }catch(e){}
+				setTheme(t);
+				const b = document.getElementById('theme-toggle');
+				if(b) b.addEventListener('click', function(){
+					const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+					setTheme(cur === 'dark' ? 'light' : 'dark');
+				});
+			})();
+		</script>
 	</body>
 	<noscript>
 		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
