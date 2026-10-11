@@ -1,0 +1,203 @@
+/* STPC 桌面样式 —— 极简风 / 明暗双主题 */
+
+:root{
+	--primary:#EFA3EB;
+	--accent:#ABDBF9;
+
+	--icon-img:52px;                 /* 桌面图标尺寸 */
+	--desktop-icon-height:84px;      /* 桌面图标块总高 */
+	--taskbar-height:calc(var(--desktop-icon-height) * 2 / 3); /* 任务栏=图标2/3 */
+
+	--radius:10px;
+	--radius-sm:6px;
+
+	/* 浅色主题（默认） */
+	--bg-fallback:#f6e6f5;
+	--bg:linear-gradient(135deg,#ffffff 0%,#fbeaf8 42%,#e9f1ff 100%);
+	--bg-overlay:radial-gradient(120% 78% at 72% -8%,rgba(255,255,255,.75),transparent 60%);
+	--overlay-opacity:.55;
+
+	--surface:rgba(255,255,255,.55);
+	--surface-solid:rgba(255,255,255,.86);
+	--surface-border:rgba(255,255,255,.75);
+	--text:#2a2333;
+	--text-muted:#6b6478;
+	--taskbar-bg:rgba(255,255,255,.45);
+
+	--shadow:0 8px 24px rgba(180,120,170,.18),0 2px 6px rgba(120,90,150,.10);
+	--shadow-strong:0 18px 50px rgba(150,90,150,.26);
+	--shadow-icon:0 9px 16px rgba(80,40,90,.34);
+	--shadow-text:0 1px 2px rgba(40,20,50,.22);
+
+	--accent-grad:linear-gradient(135deg,var(--primary),var(--accent));
+}
+
+[data-theme="dark"]{
+	--bg-fallback:#1c1730;
+	--bg:linear-gradient(135deg,#1c1730 0%,#2a1f3d 45%,#182236 100%);
+	--bg-overlay:radial-gradient(120% 78% at 72% -8%,rgba(255,255,255,.10),transparent 60%);
+	--overlay-opacity:.65;
+
+	--surface:rgba(40,32,60,.55);
+	--surface-solid:rgba(30,24,48,.86);
+	--surface-border:rgba(255,255,255,.14);
+	--text:#f3eefb;
+	--text-muted:#b9b0cf;
+	--taskbar-bg:rgba(28,22,46,.55);
+
+	--shadow:0 8px 24px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.25);
+	--shadow-strong:0 18px 50px rgba(0,0,0,.55);
+	--shadow-icon:0 9px 16px rgba(0,0,0,.5);
+	--shadow-text:0 1px 2px rgba(0,0,0,.45);
+}
+
+html,body{height:100%;}
+body{
+	margin:0;
+	font-family:-apple-system,"Segoe UI","Microsoft YaHei",system-ui,sans-serif;
+	color:var(--text);
+	background-color:var(--bg-fallback);
+	/* 保留原背景图（现状），主题渐变通过 ::before 叠加 */
+	background-image:url("./img/background.png");
+	background-size:cover;
+	background-position:center;
+	background-attachment:fixed;
+	padding-top:calc(var(--taskbar-height) + 8px);
+	overflow:hidden;
+	transition:background-color .3s ease,color .3s ease;
+}
+/* 主题渐变 + 光影感叠加层 */
+body::before{
+	content:"";
+	position:fixed;inset:0;
+	background:var(--bg-overlay),var(--bg);
+	opacity:var(--overlay-opacity);
+	pointer-events:none;
+	z-index:-1;
+	transition:opacity .3s ease;
+}
+
+/* ---------- 任务栏（顶部 / 左对齐 / 半透明） ---------- */
+#taskbar{
+	position:fixed;top:0;left:0;right:0;
+	height:var(--taskbar-height);
+	display:flex;align-items:center;gap:8px;
+	padding:0 10px;
+	background:var(--taskbar-bg);
+	backdrop-filter:blur(20px) saturate(1.2);
+	-webkit-backdrop-filter:blur(20px) saturate(1.2);
+	border-bottom:1px solid var(--surface-border);
+	box-shadow:0 2px 10px rgba(0,0,0,.06);
+	z-index:300;
+	transition:background .3s ease,border-color .3s ease;
+}
+#undermenu{display:flex;align-items:center;gap:6px;}
+#tasks{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:6px;}
+#time{
+	display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+	padding:0 8px;color:var(--text);line-height:1.15;
+}
+#time p{margin:0;font-size:12px;}
+#time p:first-child{font-size:13px;font-weight:600;}
+
+.undermenu-button{
+	display:inline-flex;align-items:center;justify-content:center;
+	height:calc(var(--taskbar-height) - 10px);
+	min-width:calc(var(--taskbar-height) - 10px);
+	padding:0 8px;
+	border:none;border-radius:var(--radius-sm);
+	background:transparent;color:var(--text);cursor:pointer;
+	font-size:13px;
+	transition:background .15s ease,transform .1s ease;
+}
+.undermenu-button:hover{background:var(--surface);}
+.undermenu-button:active{transform:scale(.96);}
+.undermenu-button img{height:20px;width:20px;vertical-align:middle;}
+
+/* ---------- 桌面图标（从上到下流式 / 较宽图标阴影 / 较窄文字阴影） ---------- */
+.desktopicon{
+	display:flex;flex-direction:column;align-items:center;
+	width:88px;
+	margin:6px 0 6px 12px;
+	padding:8px 4px;
+	border:1px solid transparent;
+	border-radius:var(--radius-sm);
+	background:transparent;color:var(--text);cursor:pointer;
+	transition:background .15s ease,border-color .15s ease;
+}
+.desktopicon:hover{background:var(--surface);border-color:var(--surface-border);}
+.desktopicon:focus-visible{outline:2px solid var(--primary);outline-offset:1px;}
+.desktopicon img{
+	width:var(--icon-img);height:var(--icon-img);
+	object-fit:contain;
+	filter:drop-shadow(var(--shadow-icon)); /* 较宽阴影 */
+}
+.desktopicon p{
+	margin:6px 0 0;font-size:12px;text-align:center;
+	text-shadow:var(--shadow-text); /* 较窄阴影 */
+}
+
+/* ---------- 弹出菜单通用（小圆角带阴影 / 过渡动画） ---------- */
+.menu{
+	position:fixed;
+	top:calc(var(--taskbar-height) + 10px);
+	left:10px;
+	min-width:240px;width:auto;
+	background:var(--surface-solid);
+	backdrop-filter:blur(18px) saturate(1.2);
+	-webkit-backdrop-filter:blur(18px) saturate(1.2);
+	border:1px solid var(--surface-border);
+	border-radius:var(--radius);
+	box-shadow:var(--shadow-strong);
+	padding:10px;
+	color:var(--text);
+	opacity:0;
+	transform:translateY(-12px) scale(.98);
+	transform-origin:top left;
+	pointer-events:none;
+	transition:opacity .18s ease,transform .18s ease;
+	z-index:200;
+}
+.menu.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+
+/* ---------- 开始菜单（75vw 宽 / 高=宽的2/3 / 从上方弹出） ---------- */
+#start-menu{
+	left:50%;
+	width:75vw;
+	height:50vw;                 /* 75vw 的 2/3 */
+	max-height:calc(100vh - var(--taskbar-height) - 28px);
+	padding:18px 22px;
+	display:flex;flex-direction:column;gap:14px;
+	transform:translate(-50%,-115%) scale(.98);  /* 初始位于视口上方 */
+	transform-origin:top center;
+}
+#start-menu.open{transform:translate(-50%,0) scale(1);}
+
+#start-menu .search{
+	width:100%;box-sizing:border-box;
+	padding:10px 14px;font-size:14px;
+	border-radius:var(--radius-sm);
+	border:1px solid var(--surface-border);
+	background:var(--surface);
+	color:var(--text);outline:none;
+	transition:border-color .15s ease,background .15s ease;
+}
+#start-menu .search:focus{border-color:var(--primary);}
+
+#start-menu .app-list{
+	list-style:none;margin:0;padding:0;
+	flex:1;overflow-y:auto;
+}
+#start-menu .app-list li{
+	display:flex;align-items:center;gap:12px;
+	padding:10px 12px;
+	border-radius:var(--radius-sm);
+	color:var(--text);cursor:pointer;
+	transition:background .15s ease;
+}
+#start-menu .app-list li:hover{background:var(--surface);}
+#start-menu .app-list li img{width:28px;height:28px;object-fit:contain;}
+
+/* 滚动条极简化 */
+#start-menu .app-list::-webkit-scrollbar{width:8px;}
+#start-menu .app-list::-webkit-scrollbar-thumb{background:var(--surface-border);border-radius:8px;}
